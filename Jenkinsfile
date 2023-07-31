@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t mbiset/ci_cd_test .'
+        sh 'docker build -t mbiset/ci_cd_test'
       }
     }
     stage('Login') {
