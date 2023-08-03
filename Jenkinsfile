@@ -4,12 +4,12 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   environment {
-       DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+       DOCKERHUB_CREDENTIALS = credentials('github')
   }
   stages {
     stage('Build') {
       steps {
-        sh 'docker build --force -t mbiset/ci_cd_test .'
+        sh 'docker build -t mbiset/ci_cd_test .'
       }
     }
     stage('Login') {
