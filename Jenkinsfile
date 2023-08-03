@@ -9,12 +9,12 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t mbiset/ci_cd_test .'
+        sh 'docker build --force -t mbiset/ci_cd_test .'
       }
     }
     stage('Login') {
       steps {
-        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p $DOCKERHUB_CREDENTIALS_PSW'
+        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
     }
     stage('Push') {
