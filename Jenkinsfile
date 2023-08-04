@@ -2,12 +2,15 @@ pipeline {
   agent any
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
-  } 
-  sh 'echo text'
+  }
   environment {
        DOCKERHUB_CREDENTIALS = credentials('dockerhub')
   }
   stages {
+    stage('starts'){
+    steps{
+    sh 'text'
+    }}
     stage('Build') {
       steps {
         sh 'docker build -t mbiset/ci_cd_test'
