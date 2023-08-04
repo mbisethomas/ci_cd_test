@@ -2,9 +2,9 @@ pipeline {
   agent any
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
-  }
+  } 
+  sh 'echo text'
   environment {
-       sh 'echo text'
        DOCKERHUB_CREDENTIALS = credentials('dockerhub')
   }
   stages {
