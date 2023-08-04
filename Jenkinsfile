@@ -4,13 +4,10 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   environment {
+       PATH = '/bin:/usr/bin:usr/local/bin'
        DOCKERHUB_CREDENTIALS = credentials('dockerhub')
   }
   stages {
-    stage('starts'){
-    steps{
-    sh 'text'
-    }}
     stage('Build') {
       steps {
         sh 'docker build -t mbiset/ci_cd_test'
