@@ -8,6 +8,6 @@ package com.ci_cd_test3.ci_cd_test3;
 	 
 	    @RequestMapping("/hello")
 	    public String hello() {
-	        return "Hello World RESTful with Spring Boot";
+	        return "Hello This is Thomas Mbise , First App deployed using \n Jenkins ,Docker ,Ubuntu Virtual Servers";
 	    }  
 	}
